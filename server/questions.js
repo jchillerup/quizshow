@@ -1,5 +1,14 @@
 exports.questions = [
     {
+        "question": "Hvilken gruppe er først til at svare A på dette spørgsmål?",
+        "answers": {            
+            "A": "",
+            "B": "",
+            "C": ""
+        },
+        "correct_answer": "A"
+    },
+    {
         "question": "Hvilke af følgende discipliner er ikke anset som en del af mekatronik?",
         "answers": {            
             "A": "Mekanik",
