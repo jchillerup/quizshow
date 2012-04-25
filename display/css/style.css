@@ -86,8 +86,8 @@ td { vertical-align: top; }
     .group {
         border: 1px solid #a00;
         background: #aaa;
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         float: left;
 
         margin: 10px;
