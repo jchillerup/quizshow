@@ -25,7 +25,7 @@ var renderState = function(state) {
         }
         
         if (state.answersPublic === false) {
-            $(".answerContainer").removeClass('correct');
+            $(".questionContainer").children().removeClass('correct');
             if (state.teamAnswers[i] !== 'X') {
                 newClass = 'answered';
             } else {
