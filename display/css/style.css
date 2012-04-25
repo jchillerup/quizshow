@@ -86,8 +86,8 @@ td { vertical-align: top; }
     .group {
         border: 1px solid #a00;
         background: #aaa;
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         float: left;
 
         margin: 10px;
@@ -99,7 +99,7 @@ td { vertical-align: top; }
       
         font-size: 80px;
         text-align: center;
-        line-height: 120px;
+        line-height: 80px;
     }
 
     .answered {
