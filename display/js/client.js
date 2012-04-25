@@ -16,9 +16,9 @@ var renderState = function(state) {
         if (state.curQuestion !== null) {
             $("#questionContainer").show();
             $("#question").html(state.curQuestion.question);
-            $("#questionA".html(state.curQuestion.answers.A));
-            $("#questionB".html(state.curQuestion.answers.B));
-            $("#questionC".html(state.curQuestion.answers.C));
+            $("#questionA").html(state.curQuestion.answers.A);
+            $("#questionB").html(state.curQuestion.answers.B);
+            $("#questionC").html(state.curQuestion.answers.C);
         } else {
             $("#questionContainer").hide();
         }
