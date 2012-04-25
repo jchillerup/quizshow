@@ -6,6 +6,7 @@ socket.on('yes', function (data) {
 
 
 var renderState = function(state) {
+    console.log(state);   
 
     for (var i = 0; i<=state.teamAnswers.length; i++) {
         var $curDOMID = $group(i+1);
