@@ -20,7 +20,6 @@ var renderState = function(state) {
     }
     
     for (i = 0; i<state.teamPoints.length; i++) {
-        console.log("#group"+(i+1)+" .points");
         $("#group"+(i+1)+" .points").html(state.teamPoints[i]);
     }
 
