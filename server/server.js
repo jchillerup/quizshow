@@ -4,8 +4,8 @@ var http = require('http');
 
 var state = {
     answersPublic: false,
-    numTeams: 8,
-    teamAnswers: ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
+    numTeams: 9,
+    teamAnswers: ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']
 };
 
 io.sockets.on('connection', function(socket) {
@@ -19,15 +19,16 @@ var processRequest = function(url) {
     if(fields[0] === 'show') {
         state.answersPublic = true;
     } else if(fields[0] === 'reset') {
-        state.answersPublic = false;
         for(i=0; i<state.teamAnswers.length; i++){
             state.teamAnswers[i] = 'X';
         }
     } else {
         var team = fields[0];
         var answer = fields[1];
-
-        state.teamAnswers[team-1] = answer;
+        
+        if (!state.answersPublic) {
+            state.teamAnswers[team-1] = answer;            
+        }     
     }
 
     return state;
