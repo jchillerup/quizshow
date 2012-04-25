@@ -108,6 +108,8 @@ td { vertical-align: top; }
     }
 
     .group .points {
+        float: left;
+        width: 80px;
         text-align: center;
     }
 
