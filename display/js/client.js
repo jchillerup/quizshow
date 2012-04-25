@@ -19,7 +19,7 @@ var renderState = function(state) {
     }
     
     for (var i = 0; i<state.teamPoints; i++) {
-        $group(i+1).children('.points').html(state.teamPoints[i]);
+        $("#group"+(i+1)+" .points").html(state.teamPoints[i]);
     }
 
     for (var i = 0; i<=state.teamAnswers.length; i++) {
