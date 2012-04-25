@@ -7,6 +7,7 @@ socket.on('yes', function (data) {
 
 var renderState = function(state) {
     console.log(state);   
+    var i =0 ;
 
     if (state.curQuestion !== null) {
         $("#questionContainer").show();
@@ -18,11 +19,12 @@ var renderState = function(state) {
         $("#questionContainer").hide();
     }
     
-    for (var i = 0; i<state.teamPoints; i++) {
+    for (i = 0; i<state.teamPoints; i++) {
+        console.log("#group"+(i+1)+" .points");
         $("#group"+(i+1)+" .points").html(state.teamPoints[i]);
     }
 
-    for (var i = 0; i<=state.teamAnswers.length; i++) {
+    for (i = 0; i<=state.teamAnswers.length; i++) {
         var $curDOMID = $group(i+1);
         $curDOMID.removeClass('answered correct incorrect');
         
