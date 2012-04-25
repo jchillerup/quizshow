@@ -13,6 +13,16 @@ var renderState = function(state) {
         
         var newClass = '';
         
+        if (state.curQuestion !== null) {
+            $("#questionContainer").show();
+            $("#question").html(state.curQuestion.question);
+            $("#questionA".html(state.curQuestion.answers.A));
+            $("#questionB".html(state.curQuestion.answers.B));
+            $("#questionC".html(state.curQuestion.answers.C));
+        } else {
+            $("#questionContainer").hide();
+        }
+        
         if (state.answersPublic === false) {
             if (state.teamAnswers[i] !== 'X') {
                 newClass = 'answered';
