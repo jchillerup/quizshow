@@ -24,22 +24,19 @@ var renderState = function(state) {
         }
         
         if (state.answersPublic === false) {
+            $(".answerContainer").removeClass('correct');
             if (state.teamAnswers[i] !== 'X') {
                 newClass = 'answered';
             } else {
                 newClass = '';
             }
         } else {
-            switch(state.teamAnswers[i]) {
-            case 'A':
+            $("#question"+state.curQuestion.correct_answer).addClass('correct');
+
+            if (state.teamAnswers[i] === state.curQuestion.correct_answer) {
                 newClass = 'correct';
-                break;
-            case 'B':
+            } else {
                 newClass = 'incorrect';
-                break;
-            case 'C':
-                newClass = 'incorrect';
-                break;
             }
         }            
         
