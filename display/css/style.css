@@ -116,7 +116,8 @@ td { vertical-align: top; }
 
     #questionContainer {
         position: absolute;
-        width: 85%;
+        width: 870px;
+        left: 77px;
         margin: 0 auto;
         border-radius: 30px;
         background: #000;
