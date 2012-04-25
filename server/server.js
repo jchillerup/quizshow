@@ -22,6 +22,7 @@ var processRequest = function(url) {
         for(i=0; i<state.teamAnswers.length; i++){
             state.teamAnswers[i] = 'X';
         }
+        state.answersPublic = false;
     } else {
         var team = fields[0];
         var answer = fields[1];
