@@ -99,12 +99,16 @@ td { vertical-align: top; }
         border-radius: 60px;
     }
 
-    .group span {
+    .group .groupNumber {
         display: block;
       
         font-size: 60px;
         text-align: center;
-        line-height: 80px;
+        line-height: 60px;
+    }
+
+    .group .points {
+
     }
 
     .answered {

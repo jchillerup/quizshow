@@ -8,21 +8,25 @@ socket.on('yes', function (data) {
 var renderState = function(state) {
     console.log(state);   
 
+    if (state.curQuestion !== null) {
+        $("#questionContainer").show();
+        $("#question").html(state.curQuestion.question);
+        $("#questionA").html(state.curQuestion.answers.A);
+        $("#questionB").html(state.curQuestion.answers.B);
+        $("#questionC").html(state.curQuestion.answers.C);
+    } else {
+        $("#questionContainer").hide();
+    }
+    
+    for (var i = 0; i<state.teamPoints; i++) {
+        $group(i+1).children('.points').html(state.teamPoints[i]);
+    }
+
     for (var i = 0; i<=state.teamAnswers.length; i++) {
         var $curDOMID = $group(i+1);
         $curDOMID.removeClass('answered correct incorrect');
         
         var newClass = '';
-        
-        if (state.curQuestion !== null) {
-            $("#questionContainer").show();
-            $("#question").html(state.curQuestion.question);
-            $("#questionA").html(state.curQuestion.answers.A);
-            $("#questionB").html(state.curQuestion.answers.B);
-            $("#questionC").html(state.curQuestion.answers.C);
-        } else {
-            $("#questionContainer").hide();
-        }
         
         if (state.answersPublic === false) {
             $(".answerContainer span").removeClass('correct');
