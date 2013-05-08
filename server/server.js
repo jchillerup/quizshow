@@ -21,7 +21,7 @@ io.sockets.on('connection', function(socket) {
               });
 
 var processRequest = function(url) {
-    fields = url.split('/');
+    var fields = url.split('/');
     fields.shift(); // shift away the first slash
 
     if(fields[0] === 'reset') {
@@ -40,6 +40,8 @@ var processRequest = function(url) {
         if (state.curQuestion === undefined) {
             state.gameOver = true;
         }
+        
+        console.log(questions[questionptr]);
 
     } else if(fields[0] === 'show') {
         state.answersPublic = true;
@@ -72,7 +74,7 @@ var processRequest = function(url) {
             if (!state.answersPublic) {
                 state.teamAnswers[team-1] = answer;
 
-                for(var i = 0; i<state.answerOrder.length; i++) {
+                for(i = 0; i<state.answerOrder.length; i++) {
                     if (state.answerOrder[i] === parseInt(team)) {
                         state.answerOrder.splice(i, 1);                        
                     }
