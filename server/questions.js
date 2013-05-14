@@ -72,11 +72,11 @@ exports.questions = [
         "correct_answer": "C"
     },
     {
-        "question": "Prins Ali vil gerne styre en 10 Volt LED der suger 2 ampere. Hvilken komponent ville være oplagt at bruge til at PWMe LEDen?",
+        "question": "Hvad betyder PWM?",
         "answers": {            
-            "A": "Transistor",
-            "B": "MOSFET",
-            "C": "Relæ"
+            "A": "Polar Weight Movement",
+            "B": "Pulse-Width Modulation",
+            "C": "Profound Wonderful Magic"
         },
         "correct_answer": "B"
     },
