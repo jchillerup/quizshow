@@ -7,7 +7,7 @@ PFont fontA;
 Serial myPort;                       // The serial port
 int[] serialInArray = new int[3];    // Where we'll put what we receive
 int serialCount = 0;                 // A count of how many bytes we receive
-int groupnumber;		             // Starting position of the ball
+int groupnumber = -1;		             // Starting position of the ball
 boolean firstContact = false;        // Whether we've heard from the microcontroller
 char answer = '0';
 String connectedcheck = "no";
@@ -75,16 +75,19 @@ void serialEvent(Serial myPort) {
     }
 }
 
-void keyPressed(event) {
-    String answer;
+void keyPressed() {
+    
     
     if (key == 'a') {
-        answer = "A";
+        answer = 'A';
+        webrequest.write("GET /" + groupnumber + "/A HTTP/1.1\n\n");
     } else if (key == 'b') {
-        answer = "B";
+        answer = 'B';
+        webrequest.write("GET /" + groupnumber + "/B HTTP/1.1\n\n");
     } else if (key == 'c') {
-        answer = "C";
+      answer = 'C';
+      webrequest.write("GET /" + groupnumber + "/C HTTP/1.1\n\n");
     }
    
-    webrequest.write("GET /" + groupnumber + "/" + answer + " HTTP/1.1\n\n");
+    
 }
