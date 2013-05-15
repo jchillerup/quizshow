@@ -46,7 +46,7 @@ var processRequest = function(url) {
         state.answersPublic = true;
     } else if(fields[0] === 'next') {
         // first, count up what teams need points
-        for (var i = 0; i < state.answerOrder.length || state.pointpot === 0; i++) {
+        for (var i = 0; i < state.answerOrder.length && state.pointpot > 0; i++) {
             if (state.teamAnswers[state.answerOrder[i]-1] === state.curQuestion.correct_answer) {
                 state.teamPoints[state.answerOrder[i]-1] += state.pointpot--;
             }
