@@ -7,9 +7,9 @@ var questionptr = 0;
 
 var state = {
     answersPublic: false,
-    numTeams: 9,
-    teamAnswers: ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
-    teamPoints: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    numTeams: 10,
+    teamAnswers: ['X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X'],
+    teamPoints: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     answerOrder: [],
     curQuestion: null,
     gameOver: true,
@@ -29,7 +29,8 @@ var processRequest = function(url) {
         state.gameOver = 0;
         state.curQuestion = null;
         state.gameOver = false;
-        
+        state.pointpot = 5;
+
         for(i=0; i<state.teamAnswers.length; i++){
             state.teamPoints[i] = 0;
             state.teamAnswers[i] = 'X';
@@ -41,13 +42,11 @@ var processRequest = function(url) {
             state.gameOver = true;
         }
         
-        console.log(questions[questionptr]);
-
     } else if(fields[0] === 'show') {
         state.answersPublic = true;
     } else if(fields[0] === 'next') {
         // first, count up what teams need points
-        for (var i = 0; i<state.answerOrder.length || state.pointpot === 0; i++) {
+        for (var i = 0; i < state.answerOrder.length || state.pointpot === 0; i++) {
             if (state.teamAnswers[state.answerOrder[i]-1] === state.curQuestion.correct_answer) {
                 state.teamPoints[state.answerOrder[i]-1] += state.pointpot--;
             }

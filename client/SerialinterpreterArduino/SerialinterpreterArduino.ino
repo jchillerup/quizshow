@@ -1,10 +1,10 @@
 
-/* Matti og JCs Quizshow
+/* Emil, Kaare og JCs Quizshow
 
 Ret jeres Gruppenummer i integeren groupnumber.
-Knappe (med pull up resitor) i portene 2, 3 og 4.
-
+Knappe i pins 2, 3 og 4.
 */
+
 int groupnumber = 0;
 long lastpress = 0;
 int inByte = 0;         // incoming serial byte
@@ -17,7 +17,12 @@ void setup()
   pinMode(2, INPUT);   // digital sensore
   pinMode(3, INPUT);   
   pinMode(4, INPUT);   
- 
+
+  digitalWrite(2, INPUT);
+  digitalWrite(3, INPUT);
+  digitalWrite(4, INPUT);
+  
+  
   establishContact();  // send a byte to establish contact until Processing responds 
 }
 
